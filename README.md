@@ -25,6 +25,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Docker Setup
 
 docker-compose up -d
+
 docker-compose down
 
 ## PRISMA INFO
