@@ -1,3 +1,23 @@
+# Crypto Wallet Tracker
+
+The Crypto Wallet Tracker is a modern web application designed to help users monitor and track their cryptocurrency holdings across different wallets. Built with the latest web technologies, including Next.js 14, Prisma, TypeScript, and PostgreSQL, this app offers a seamless and efficient user experience, providing real-time insights into cryptocurrency portfolios.
+
+## Features
+
+- **Real-Time Tracking**: Monitor your crypto wallet balances and transactions in real-time.
+- **Portfolio Overview**: Get a comprehensive overview of your cryptocurrency holdings, including asset distribution and total value.
+- **Multi-Wallet Support**: Easily add and manage multiple cryptocurrency wallets in one place.
+- **Secure & Private**: Your data is securely stored and processed, ensuring your information remains private.
+- **Responsive Design**: Enjoy a consistent experience across all your devices, thanks to the responsive design.
+
+## Built With
+
+- **[Next.js 14](https://nextjs.org/)**: The React framework for production, providing fast rendering and flexible data fetching.
+- **[Prisma](https://www.prisma.io/)**: Next-generation ORM for Node.js and TypeScript, simplifying database access and management.
+- **[TypeScript](https://www.typescriptlang.org/)**: Adds static type definitions to JavaScript, enhancing development and maintainability.
+- **[PostgreSQL](https://www.postgresql.org/)**: Robust and powerful open-source relational database system.
+  """
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
