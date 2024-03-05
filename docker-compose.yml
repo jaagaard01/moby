@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:latest
+    container_name: moby_postgres_container
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: moby_db
+      POSTGRES_USER: moby_user
+      POSTGRES_PASSWORD: moby_password
+    volumes:
+      - moby_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  moby_postgres_data:
