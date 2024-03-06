@@ -4,7 +4,7 @@ import { LoginUserInput, loginUserSchema } from "@/lib/user-schema";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useRouter, useSearchParams } from "next/navigation";
 
-import Image from "next/image";
+import GoogleIcon from "@/icons/GoogleIcon";
 import { signIn } from "next-auth/react";
 import toast from "react-hot-toast";
 import { useState } from "react";
@@ -107,19 +107,12 @@ export const LoginForm = () => {
       </div>
 
       <a
-        className="px-7 py-2 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3"
+        className="px-7 gap-2 py-2 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3"
         style={{ backgroundColor: "#3b5998" }}
         onClick={() => signIn("google", { callbackUrl })}
         role="button"
       >
-        <Image
-          className="pr-2"
-          src="/images/google.svg"
-          alt=""
-          style={{ height: "2rem" }}
-          width={35}
-          height={35}
-        />
+        <GoogleIcon height="20px" width="20px" />
         Continue with Google
       </a>
       {/* <a

@@ -1,8 +1,11 @@
 "use client";
 
+import Header from "@/components/header";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+
+// THIS JUST SHOWS HOW TO VALIDATE A USER SESSIONS ON A CLIENT COMPONENT FOR REFERENCE FOR NOW
 
 export default function Profile() {
   const router = useRouter();
@@ -28,12 +31,12 @@ export default function Profile() {
             ) : (
               <div className="flex items-center gap-8">
                 <div>
-                  <Image
+                  {/* <Image
                     src={user.image ? user.image : "/images/default.png"}
                     alt={`profile photo of ${user.name}`}
                     width={90}
                     height={90}
-                  />
+                  /> */}
                 </div>
                 <div className="mt-8">
                   <p className="mb-3">ID: {user.id}</p>

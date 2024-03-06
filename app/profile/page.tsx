@@ -23,12 +23,12 @@ export default async function ProfilePage() {
             </p>
             <div className="flex items-center gap-8">
               <div>
-                <Image
+                {/* <Image
                   src={user?.image ? user.image : "/images/default.png"}
                   alt={`profile photo of ${user?.name}`}
                   width={90}
                   height={90}
-                />
+                /> */}
               </div>
               <div className="mt-8">
                 <p className="mb-3">ID: {user?.id}</p>

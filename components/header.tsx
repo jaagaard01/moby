@@ -1,3 +1,12 @@
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 import { auth, signOut } from "@/auth";
 
 import Link from "next/link";
@@ -41,7 +50,12 @@ const Header = async () => {
           )}
           {user && (
             <form action={logoutAction} className="flex">
-              <li>
+              <li className="ml-4">
+                <Link href="/dashboard" className="text-ct-dark-600">
+                  Dashboard
+                </Link>
+              </li>
+              <li className="ml-4">
                 <Link href="/client-side" className="text-ct-dark-600">
                   Client
                 </Link>
