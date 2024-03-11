@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { CiSearch } from "react-icons/ci";
 import Link from "next/link";
 import WalletSearchForm from "./wallet/wallet-search-form";
 
@@ -16,7 +17,9 @@ export default function Dashboard({ searchParams }: SearchParamProps) {
           hello from dashboard
           <div>another line</div>
           <Link href="/dashboard?show=true">
-            <Button>Add a wallet</Button>
+            <Button className="flex items-center gap-3 justify-between">
+              Search for a wallet <CiSearch size={16} />
+            </Button>
           </Link>
         </div>
       </section>

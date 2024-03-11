@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import { Suspense } from "react";
 
 export default function DashboardLayout({
   children, // will be a page or nested layout
@@ -6,10 +7,12 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      <Header />
+    <Suspense fallback={<div>Loading...</div>}>
+      <section>
+        <Header />
 
-      {children}
-    </section>
+        {children}
+      </section>
+    </Suspense>
   );
 }

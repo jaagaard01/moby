@@ -4,9 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "static.alchemyapi.io",
-        port: "",
-        pathname: "",
+        hostname: "**",
       },
     ],
   },

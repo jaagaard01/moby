@@ -100,12 +100,18 @@ export const fetchWalletDataWithFetch = async (
     balance = balance / Math.pow(10, metadata.decimals);
     balance = balance.toFixed(2);
     // Pushing structured token data into tokenDetails array
-    tokenDetails.push({
-      name: metadata.name,
-      balance: `${balance}`,
-      symbol: metadata.symbol,
-      logo: metadata.logo,
-    });
+    if (
+      !(metadata.name.includes("#") || metadata.name.includes("$")) &&
+      metadata.name !== ""
+    ) {
+      tokenDetails.push({
+        name: metadata.name,
+        balance: `${balance}`,
+        symbol: metadata.symbol,
+        logo: metadata.logo,
+      });
+    }
   }
+
   return tokenDetails;
 };
