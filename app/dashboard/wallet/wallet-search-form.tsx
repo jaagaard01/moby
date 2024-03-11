@@ -1,7 +1,17 @@
+import React, { useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
-export default function AddWalletForm() {
+export default function WalletSearchForm() {
+  const handleWalletSearch = async (formData: FormData) => {
+    "use server";
+    const address = formData.get("address");
+    const blockchain = formData.get("blockchain");
+    redirect(`/dashboard/wallet/${address}/${blockchain}`);
+  };
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
       <div className="relative bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
@@ -24,12 +34,14 @@ export default function AddWalletForm() {
             </svg>
           </Link>
         </div>
-        <form className="space-y-4">
+
+        <form className="space-y-4" action={handleWalletSearch}>
           <div>
             <label className="block text-sm font-medium text-gray-700">
               Wallet Name
             </label>
             <input
+              name="walletName"
               type="text"
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
               placeholder="My Wallet"
@@ -40,16 +52,21 @@ export default function AddWalletForm() {
               Wallet Address
             </label>
             <input
+              name="address"
               type="text"
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
               placeholder="0x..."
+              required
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">
               Blockchain
             </label>
-            <select className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500">
+            <select
+              name="blockchain"
+              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+            >
               <option>ERC-20 (Ethereum)</option>
               {/* Add more options if necessary */}
             </select>

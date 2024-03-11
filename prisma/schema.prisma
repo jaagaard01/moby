@@ -68,3 +68,11 @@ model VerificationRequest {
 
   @@unique([identifier, token])
 }
+
+model Wallet {
+  id         String   @id @default(uuid())
+  address    String   @unique
+  createdAt  DateTime @default(now())
+  name       String   @unique
+  blockchain String
+}
