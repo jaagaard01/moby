@@ -1,3 +1,4 @@
+# Whale Tracker - Moby
 # Crypto Wallet Tracker
 
 The Crypto Wallet Tracker is a modern web application designed to help users monitor and track their cryptocurrency holdings across different wallets. Built with the latest web technologies, including Next.js 14, Prisma, TypeScript, and PostgreSQL, this app offers a seamless and efficient user experience, providing real-time insights into cryptocurrency portfolios.
