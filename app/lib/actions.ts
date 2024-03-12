@@ -98,7 +98,7 @@ export const fetchWalletDataWithFetch = async (
 
     // Compute token balance in human-readable format
     balance = balance / Math.pow(10, metadata.decimals);
-    balance = balance.toFixed(2);
+    balance = balance.toFixed(8);
     // Pushing structured token data into tokenDetails array
     if (
       !(metadata.name.includes("#") || metadata.name.includes("$")) &&
@@ -115,3 +115,36 @@ export const fetchWalletDataWithFetch = async (
 
   return tokenDetails;
 };
+
+export async function getTokenPriceFromCoinGecko(
+  // TODO need to change this function to actually work
+  tokenName: string[],
+  platformId: string = "ethereum"
+) {
+  try {
+    const priceOptions = {
+      method: "GET",
+      headers: { "x-cg-pro-api-key": `'${process.env.COIN_GECKO_API_KEY}'` },
+    };
+
+    const response = await fetch(
+      `https://api.coingecko.com/apiv3/simple/token_price/${platformId}?contract_addresses=${contractAddress}&vs_currencies=usd`,
+      priceOptions
+    );
+    if (!response.ok) {
+      // If the response is not OK, log the status and return null or throw an error
+      const textResponse = await response.text(); // Attempt to read response as text
+      console.error(
+        `Error fetching token price from CoinGecko: ${response.status} ${response.statusText}`,
+        textResponse
+      );
+      return null;
+    }
+
+    const data = await response.json();
+    return data[lowerCaseAddress]?.usd;
+  } catch (error) {
+    console.error("Error fetching token price from CoinGecko:", error);
+    return null;
+  }
+}

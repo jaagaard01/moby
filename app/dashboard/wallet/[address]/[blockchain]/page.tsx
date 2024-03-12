@@ -9,7 +9,6 @@ export default async function FoundWalletPage({
   params: { address: string; blockchain: string };
 }) {
   const tokens = await fetchWalletDataWithFetch(params.address);
-  console.log(tokens, "tokens here");
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
